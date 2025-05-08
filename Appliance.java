@@ -1,8 +1,12 @@
+/*
+ * Main (Parent) Appliance class.
+ */
 public class Appliance {
 
-    private double inputPower;
-    private double outputPower;
-    private String parentCompany;
+    //Private attributes
+    private static  double inputPower;
+    private static  double outputPower;
+    private static String parentCompany;
     
     public Appliance(double inputPower,double outputPower,String parentCompany){
         this.inputPower = inputPower;
@@ -20,13 +24,13 @@ public class Appliance {
         this.parentCompany = parentCompany;
     }
 
-    public double getInputPower(){
+    public static double getInputPower(){
         return inputPower;
     }
-    public double getOutputPower(){
+    public static double getOutputPower(){
         return outputPower;
     }
-    public String getParentCompany(){
+    public static String getParentCompany(){
         return parentCompany;
     }
 
@@ -53,9 +57,14 @@ public class Appliance {
     }
 
 
-    public static void operate(double inputPower,double outputPower,String parentCompany){
-        
+    public void operate(double inputPower, double outputPower, String parentCompany) {
+        setInputPower(inputPower);
+        setOutputPower(outputPower);
+        setParentCompany(parentCompany);
+        System.out.println("Operating appliance with updated attributes:");
+        System.out.println("Input Power: " + getInputPower());
+        System.out.println("Output Power: " + getOutputPower());
+        System.out.println("Parent Company: " + getParentCompany());
     }
-
 
 }
